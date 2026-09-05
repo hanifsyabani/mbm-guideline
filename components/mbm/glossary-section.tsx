@@ -13,7 +13,6 @@ export function GlossarySection({ items, query }: GlossarySectionProps) {
     <section id="istilah" className="mx-auto max-w-6xl scroll-mt-28 px-4 py-16 sm:px-6 lg:py-24">
       <SectionHeading
         title="Daftar Istilah"
-        description="Singkatan utama yang muncul di rundown, CG, dan bagian program."
       />
 
       {items.length === 0 ? (

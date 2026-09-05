@@ -13,7 +13,6 @@ export function ProgramSection({ items, query }: ProgramSectionProps) {
     <section id="kepala" className="mx-auto max-w-6xl scroll-mt-28 px-4 py-16 sm:px-6 lg:py-24">
       <SectionHeading
         title="Kepala MBM & Struktur Program"
-        description="Rangka kepala file dan bagian-bagian utama dalam susunan program MBM."
       />
 
       {items.length === 0 ? (

@@ -15,7 +15,6 @@ export function RulesSection({ items, query }: RulesSectionProps) {
       <div className="mx-auto max-w-6xl scroll-mt-28 px-4 py-16 sm:px-6 lg:py-24">
         <SectionHeading
           title="Catatan Penting"
-          description="Rules dan pitfalls yang paling sering berpengaruh ke pembacaan otomatis dan kerapian CG."
         />
 
         {items.length === 0 ? (
@@ -27,13 +26,15 @@ export function RulesSection({ items, query }: RulesSectionProps) {
                 <h3 className="text-lg font-semibold text-mbm-ink">
                   <Highlight text={rule.title} query={query} />
                 </h3>
-                <ul className="mt-4 space-y-2 text-sm leading-6 text-mbm-muted">
-                  {rule.points.map((point) => (
-                    <li key={point}>
-                      <Highlight text={point} query={query} />
-                    </li>
-                  ))}
-                </ul>
+                {rule.points && (
+                  <ul className="mt-4 space-y-2 text-sm leading-6 text-mbm-muted">
+                    {rule.points.map((point) => (
+                      <li key={point}>
+                        <Highlight text={point} query={query} />
+                      </li>
+                    ))}
+                  </ul>
+                )}
 
                 {(rule.wrong || rule.right) && (
                   <div className="mt-5 grid gap-3 sm:grid-cols-2">
@@ -50,6 +51,14 @@ export function RulesSection({ items, query }: RulesSectionProps) {
                         <StatusBadge status="Benar" />
                         <p className="mt-3 font-mono text-xs leading-5 text-mbm-ink">
                           <Highlight text={rule.right} query={query} />
+                        </p>
+                      </div>
+                    )}
+                    {rule.right2 && (
+                      <div className="border border-mbm-ok/30 bg-green-50 p-3">
+                        <StatusBadge status="Benar" />
+                        <p className="mt-3 font-mono text-xs leading-5 text-mbm-ink">
+                          <Highlight text={rule.right2} query={query} />
                         </p>
                       </div>
                     )}

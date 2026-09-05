@@ -20,7 +20,6 @@ export function FormatSection({ groups, cases, query }: FormatSectionProps) {
       <div className="mx-auto max-w-6xl scroll-mt-28 px-4 py-16 sm:px-6 lg:py-24">
         <SectionHeading
           title="Format Penulisan"
-          description="Setiap contoh menjaga pola Format umum, Contoh, lalu Breakdown komponen."
         />
 
         {!hasResult ? (
@@ -35,9 +34,7 @@ export function FormatSection({ groups, cases, query }: FormatSectionProps) {
                       <h3 className="text-xl font-semibold text-mbm-ink">
                         <Highlight text={group.title} query={query} />
                       </h3>
-                      <p className="mt-3 text-sm leading-6 text-mbm-muted">
-                        <Highlight text={group.description} query={query} />
-                      </p>
+                    
                       <div className="mt-5 space-y-2">
                         {group.patterns.map((pattern) => (
                           <p
@@ -69,7 +66,7 @@ export function FormatSection({ groups, cases, query }: FormatSectionProps) {
                 <div className="grid gap-4 lg:grid-cols-3">
                   {cases.map((item) => (
                     <article key={item.title} className="border border-mbm-hairline bg-white p-4">
-                      <h4 className="text-base font-semibold text-mbm-ink">
+                      <h4 className="text-base uppercase font-semibold text-mbm-ink">
                         <Highlight text={item.title} query={query} />
                       </h4>
                       <p className="mt-2 text-sm leading-6 text-mbm-muted">

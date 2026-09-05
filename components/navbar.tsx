@@ -30,7 +30,7 @@ export default function Navbar() {
             <a
               key={item.id}
               href={`#${item.id}`}
-              className={`shrink-0 border-b-2 py-2 transition hover:ntext-mbm-ink focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-mbm-red ${
+              className={`shrink-0 border-b-2 uppercase py-2 transition hover:ntext-mbm-ink focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-mbm-red ${
                 activeSection === item.id ? "border-mbm-red text-mbm-ink" : "border-transparent"
               }`}
             >

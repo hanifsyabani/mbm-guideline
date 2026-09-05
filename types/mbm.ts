@@ -44,9 +44,10 @@ export type ProgramBlock = {
 
 export type RuleItem = {
   title: string;
-  points: string[];
+  points?: string[];
   wrong?: string;
   right?: string;
+  right2?: string;
 };
 
 export type SourceShot = {

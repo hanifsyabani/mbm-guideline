@@ -12,6 +12,8 @@ import { HeroSection } from "./hero-section";
 import { ProgramSection } from "./program-section";
 import { ReferenceSection } from "./reference-section";
 import { RulesSection } from "./rules-section";
+import Image from "next/image";
+import { SectionHeading } from "./section-heading";
 
 export function GuidePage() {
   const setActiveSection = useMbmGuideStore((state) => state.setActiveSection);
@@ -22,7 +24,6 @@ export function GuidePage() {
     filteredGlossary,
     filteredPrograms,
     filteredRules,
-    totalResults,
   } = useMbmSearchResults();
 
   useEffect(() => {
@@ -47,12 +48,26 @@ export function GuidePage() {
 
   return (
     <main className="min-h-screen bg-mbm-bg text-mbm-ink">
-      <HeroSection  />
+      <HeroSection />
+      <section id="tampilan" className="mx-auto max-w-6xl scroll-mt-28 px-4 py-16 sm:px-6 lg:py-24">
+        <SectionHeading
+          title="Tampilan MBM"
+        />
+        <div className="flex justify-center">
+          <Image
+            src={'/mbm-assets/TAMPILAN MBM.png'}
+            alt="MBM Display"
+            className="w-400"
+            width={500}
+            height={500}
+          />
+        </div>
+      </section>
       <GlossarySection items={filteredGlossary} query={cleanQuery} />
       <FormatSection groups={filteredFormats} cases={filteredCases} query={cleanQuery} />
       <ProgramSection items={filteredPrograms} query={cleanQuery} />
       <RulesSection items={filteredRules} query={cleanQuery} />
-      <ReferenceSection shots={sourceShots} query={cleanQuery} />
+      <ReferenceSection  />
       <BackToTop />
     </main>
   );

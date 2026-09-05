@@ -12,50 +12,45 @@ export const navItems = [
 export const glossary: GlossaryTerm[] = [
   {
     term: "CG",
-    definition: "Character Generator, teks grafis on-air seperti lower-third.",
+    definition: "Character Generator",
     keywords: ["lower third", "caption", "grafis"],
   },
   {
     term: "OBB",
-    definition: "Opening Broadcast Bumper, bumper pembuka program.",
+    definition: "Opening Broadcast Bumper",
   },
-  { term: "HL", definition: "Highlight, rangkuman beberapa topik berita." },
-  { term: "VT", definition: "Video Tape, paket berita yang ditayangkan sebagai video." },
+  { term: "HL", definition: "Highlight" },
+  { term: "VT", definition: "Video Tape" },
   {
     term: "SOT",
-    definition: "Sound on Tape, kutipan suara narasumber dengan cakupan publik.",
-    format: "(SOT: Nama, Jabatan)",
+    definition: "Sound on Tape",
   },
   {
     term: "LOT",
-    definition: "Live on Tape, laporan live atau tapping untuk paket VT.",
-    format: "(LOT: Nama Reporter - Lokasi, lokasi)",
+    definition: "Live on Tape (Tayang Live, kadang-kadang Tapping).",
   },
   {
     term: "Wwc",
-    definition: "Wawancara personal atau cuplikan dialog dari program iNews.",
-    format: "(Wwc: Nama, Jabatan)",
+    definition: "Wawancara ((Cakupan lebih personal/private, face-to-face, cuplikan dialog dari program iNews)",
   },
   {
     term: "Wwc by Phone",
     definition: "Wawancara melalui telepon.",
-    format: "(Wwc by Phone: Nama, Jabatan)",
   },
   {
     term: "Voxpop",
-    definition: "Wawancara sejumlah warga tentang topik ringan yang sedang hangat.",
-    format: "(Voxpop: Jabatan)",
+    definition: "Wawancara sejumlah warga tentang topik yang sedang hangat.",
   },
-  { term: "LR", definition: "Live Report, laporan yang tayang live.", format: "(LR: Nama Reporter - Lokasi, lokasi)" },
-  { term: "LR by Phone", definition: "Live Report melalui sambungan telepon." },
-  { term: "LR by Video Call", definition: "Live Report melalui video call." },
-  { term: "Teleconference", definition: "Wawancara narasumber live melalui Zoom.", format: "(Teleconference: Nama, Jabatan)" },
-  { term: "Dialog", definition: "Wawancara narasumber live di studio.", format: "(Dialog: Nama, Jabatan)" },
-  { term: "Telewicara", definition: "Wawancara narasumber live melalui telepon suara.", format: "(Telewicara: Nama, Jabatan)" },
-  { term: "Break / CB", definition: "Commercial Break. Kode CB ditulis di kolom Combreak." },
-  { term: "Teaser", definition: "Pengantar acara atau berita selanjutnya." },
-  { term: "CT", definition: "Credit Title pada bagian penutup program." },
-  { term: "Infografis", definition: "Informasi berupa chart atau data visual agar mudah dipahami.", format: "(Infografis: Judul Infografis)" },
+  { term: "LR", definition: "Live Report (Tayang Live)" },
+  { term: "LR by Phone", definition: "Live Report by Phone " },
+  { term: "LR by Video Call", definition: "Live Report by Video Call." },
+  { term: "Teleconference", definition: "Wawancara Narasum Live (Zoom)"},
+  { term: "Dialog", definition: "Wawancara Narasum Live (Studio)" },
+  { term: "Telewicara", definition: "Wawancara Narasum Live (Telpon Suara)" },
+  { term: "Break / CB", definition: "Commercial Break (CB) " },
+  { term: "Teaser", definition: "Acara Selanjutnya " },
+  { term: "CT", definition: "Credit Title" },
+  { term: "Infografis", definition: "Informasi berupa chart, dll untuk membuat penonton lebih mudah menerima"},
 ];
 
 export const formatGroups: FormatGroup[] = [
@@ -196,7 +191,7 @@ export const formatGroups: FormatGroup[] = [
     examples: [
       {
         label: "Infografis",
-        text: "N17: Pasal Kontroversial Dalam KUHP Baru (Infografis: Pasal-Pasal KUHP Baru)",
+        text: "N17: Pasal Kontroversial Dalam KUHP Baru (Jakarta / Infografis: Pasal-Pasal KUHP Baru)",
         image: "/mbm-assets/image41.png",
         breakdown: [
           { value: "N17", label: "News urutan ke-17" },
@@ -231,7 +226,7 @@ export const specialCases: SpecialCase[] = [
     title: "Lebih dari satu sub-part atau CG",
     description: "Setiap tambahan ditulis setelah kurung tutup dan dipisahkan dengan tanda plus.",
     items: [
-      { status: "Benar", text: "N8: Kuhp & Kuhap Baru Berlaku Januari 2026 (Dokumentasi / Wwc: Albert Aries, Anggota Tim Ahli Kuhp Nasional / SOT: Prabowo, Presiden RI) +" },
+      { status: "Benar", text: "N8: Kuhp & Kuhap Baru Berlaku Januari 2026 (Dokumentasi / Wwc: Albert Aries, Anggota Tim Ahli Kuhp Nasional) + SOT: Prabowo, Presiden RI)" },
       { status: "Benar", text: "N8: Banjir Di Bandung (Bandung, Jabar) + Banjir Rusak Pertanian Di Balikpapan (Balikpapan, Kaltim)" },
       { status: "Benar", text: "N8: Banjir Di Bandung (Bandung, Jabar) + N9: Penanganan Bencana Masih Berlanjut (Jakarta)" },
     ],
@@ -243,7 +238,8 @@ export const programBlocks: ProgramBlock[] = [
     title: "Kepala MBM",
     points: [
       "Date: Day, DD Month YYYY. Day disingkat, bulan tidak disingkat.",
-      "Judul Program ditulis jelas sesuai rundown.",
+      
+      "Judul Program",
       "Host/Anchor lebih dari satu memakai tanda &.",
       "Tema ditulis jika ada dialog. Jika tidak ada, hapus bagian tema.",
     ],
@@ -254,7 +250,7 @@ export const programBlocks: ProgramBlock[] = [
   },
   {
     title: "HL (Highlight)",
-    points: ["Berisi VT dengan beberapa topik berita utama."],
+    points: ["Berisi VT dengan beberapa Topik Berita."],
   },
   {
     title: "Opening (OBB & Hosting)",
@@ -280,7 +276,7 @@ export const rules: RuleItem[] = [
     points: ["Spasi ekstra bisa membuat hasil otomatis tidak terbaca.", "BREAK ditulis kapital penuh dan tanpa spasi setelah kode."],
   },
   {
-    title: "CG yang mengutip tokoh memakai titik koma",
+    title: "Penulisan CG yang mengutip tokoh memakai titik koma",
     points: ["Gunakan ; untuk memisahkan nama tokoh dan kutipan.", "Jika memakai :, pembacaan otomatis bisa berhenti terlalu cepat."],
     wrong: "N6: Mahfud MD: Pandji Tidak Bisa Dihukum (Youtube / SOT: Mahfud MD, Menko Polhukam 2019-2024)",
     right: "N6: Mahfud MD; Pandji Tidak Bisa Dihukum (Youtube / SOT: Mahfud MD, Menko Polhukam 2019-2024)",
@@ -292,19 +288,20 @@ export const rules: RuleItem[] = [
     right: "N8: Banjir Di Bandung (Bandung, Jabar) + Banjir Rusak Pertanian Di Balikpapan (Balikpapan, Kaltim)",
   },
   {
-    title: "Tulis Tidak Ada CG saat tidak ada lower-third",
-    points: ["Untuk video scratch, blank, atau masalah teknis, tetap tulis CG utama lalu tambah keterangan."],
+    title: "Tulis Tidak Ada CG",
+    points: ["Apabila tampilan video scratch, blank atau terdapat kesalahan teknis lainnya, beri keterangan"],
     right: "N3: Perawatan Kereta Api Mudik (Semarang, Jateng) + VT Bermasalah",
+    right2: "N1: Tewas Karena Tawuran (Jakarta / Wwc: AKBP Afrizal, Kapolsek Taman Sari) + Tidak Ada CG",
   },
   {
-    title: "Lokasi dengan sumber atau tanpa lokasi",
-    points: ["Kalau lokasi disebut di paket berita, tetap tulis lokasi.", "Jika tidak ada lokasi, tulis Tidak Ada Lokasi setelah kurung buka."],
+    title: "Lokasi dengan sumber atau tidak ada lokasi",
     right: "N1: Tewas Karena Tawuran (Tidak Ada Lokasi / Wwc: AKBP Afrizal, Kapolsek Taman Sari)",
   },
   {
     title: "Gunakan Proper Case",
-    points: ["Judul, lokasi, nama, dan singkatan perlu rapi.", "Jika mengetik uppercase dulu, ubah kembali menjadi Proper Case."],
-    right: "N5: OTT KPK Di Kantor Bupati Bekasi (Bekasi, Jabar)",
+    points: ["Jika mau ketik dengan huruf besar dulu (Upper), kalian harus ubah setelahnya menjadi Proper", "Atau penulisan sudah rapi, dengan kata awal huruf besar, penulisan lokasi, nama, singkatan."],
+    right: "N4: Mahfud MD; Pandji tidak bisa di penjara (Youtube)",
+    right2: "N5: OTT KPK di kantor Bupati Bekasi (Bekasi, Jabar)",
   },
   {
     title: "Checklist Save Files",

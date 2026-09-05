@@ -5,7 +5,7 @@ import { Readable } from "node:stream";
 export const runtime = "nodejs";
 
 export async function GET() {
-  const filePath = join(process.cwd(), "MBM GUIDELINE.docx");
+  const filePath = join(process.cwd(), "DOKUMEN-GUIDELINE.pdf");
 
   try {
     const { size } = statSync(filePath);
@@ -14,7 +14,7 @@ export async function GET() {
     return new Response(stream, {
       headers: {
         "Cache-Control": "no-store",
-        "Content-Disposition": 'attachment; filename="MBM-Guideline.docx"',
+        "Content-Disposition": 'attachment; filename="DOKUMEN-GUIDELINE.pdf"',
         "Content-Length": String(size),
         "Content-Type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
       },

@@ -5,6 +5,7 @@ export const navItems = [
   { id: "tampilan", label: "Tampilan" },
   { id: "istilah", label: "Istilah" },
   { id: "sumber", label: "Sumber" },
+  { id: "istilah-baru", label: "Istilah Baru" },
   { id: "format", label: "Format" },
   { id: "kepala", label: "Kepala MBM" },
   { id: "rules", label: "Rules" },
@@ -33,11 +34,11 @@ export const glossary: GlossaryTerm[] = [
   },
   {
     term: "Wwc",
-    definition: "Wawancara ((Cakupan lebih personal/private, face-to-face, cuplikan dialog dari program iNews)",
+    definition: "Wawancara",
   },
   {
     term: "Wwc by Phone",
-    definition: "Wawancara melalui telepon.",
+    definition: "Wawancara by telepon.",
   },
   {
     term: "Voxpop",
@@ -53,6 +54,45 @@ export const glossary: GlossaryTerm[] = [
   { term: "Teaser", definition: "Acara Selanjutnya " },
   { term: "CT", definition: "Credit Title" },
   { term: "Infografis", definition: "Informasi berupa chart, dll untuk membuat penonton lebih mudah menerima"},
+];
+
+export const newGlossary: GlossaryTerm[] = [
+  {
+    term: "SOT",
+    definition: "Sound on Tape",
+    format: "Format Penulisan: (SOT: Nama, Jabatan)",
+  },
+  {
+    term: "Wwc",
+    definition: "Wawancara",
+    format: "Format penulisan: (Wwc: Nama, Jabatan)",
+  },
+  {
+    term: "Voxpop",
+    definition: "Wawancara sejumlah warga mengenai suatu topik yang ringan dan sedang hangat",
+    format: "Format Penulisan: (Voxpop: Jabatan)",
+  },
+  {
+    term: "Dialog",
+    definition: "Wawancara dengan narasumber secara live",
+    format:
+      "Format Penulisan:\n- (Dialog: Nama, Jabatan) atau\n- (Teleconference: Nama, Jabatan) atau\n- (Telewicara: Nama, Jabatan)",
+  },
+  {
+    term: "Infografis",
+    definition: "Informasi berupa chart, dll",
+    format: "Format Penulisan: (Infografis: Judul Infografis)",
+  },
+  {
+    term: "LOT",
+    definition: "Live on Tape",
+    format: "Format Penulisan: (LOT: Nama – Lokasi, lokasi)",
+  },
+  {
+    term: "LR",
+    definition: "Live Report",
+    format: "Format Penulisan: (LR: Nama – Lokasi, lokasi)",
+  },
 ];
 
 export const formatGroups: FormatGroup[] = [
@@ -220,8 +260,10 @@ export const specialCases: SpecialCase[] = [
     title: "Tidak Ada CG",
     description: "Tetap buat CG sesuai isi berita, lalu tambahkan keterangan setelah tanda plus.",
     items: [
-      { status: "Benar", text: "N1: Tewas Karena Tawuran (Jakarta / Wwc: AKBP Afrizal, Kapolsek Taman Sari) + Tidak Ada CG" },
-      { status: "Catatan", text: "Untuk video scratch, blank, atau bermasalah teknis, tulis keterangan seperti + VT Bermasalah." },
+      { status: "Benar",
+        text2: "N1: Tewas Karena Tawuran (Jakarta / Wwc: AKBP Afrizal, Kapolsek Taman Sari) + Tidak Ada CG" ,
+        text: 'Tetap buat CG sesuai isi berita Beri keterangan di akhir Format menggunakan + (plus) ➔ + Tidak Ada CG'},
+      { status: "Catatan", text: "Apabila tampilan video scratch, blank atau terdapat kesalahan teknis lainnya, beri keterangan", text2: 'N3: Perawatan Kereta Api Mudik (Semarang, Jateng) + VT Bermasalah' },
     ],
   },
   {
@@ -257,33 +299,33 @@ export const programBlocks: ProgramBlock[] = [
   },
   {
     title: "Lead In & Lead Out",
-    images: ["/mbm-assets/leadin.png", "/mbm-assets/leadout.png"],
-    points: ["Isi nama program sebelum dan sesudah.", "Durasi acuan: 10 menit."],
+    images: ["/mbm-assets/LEAD IN.png", "/mbm-assets/LEAD OUT.png"],
+    points: ["NAMA PROGRAM SEBELUM DAN SESUDAH", "Lead In = 10 Menit", "Lead Out = 10 Menit"],
   },
   {
     title: "HL (Highlight)",
-    images: ["/mbm-assets/hl.png", "/mbm-assets/hl2.png"],
+    images: ["/mbm-assets/HL_1.png", "/mbm-assets/HL_2.png"],
     points: ["Berisi VT dengan beberapa Topik Berita."],
   },
   {
     title: "Opening (OBB & Hosting)",
-    images: ["/mbm-assets/obb.png", "/mbm-assets/obb2.png"],
+    images: ["/mbm-assets/HOSTING_1 [OBB + HOSTING].png", "/mbm-assets/HOSTING_2.png"],
 
     points: ["Dipakai untuk pembuka program sebelum masuk rundown berita."],
   },
   {
     title: "Perpindahan N",
-    images: ["/mbm-assets/perpindahan-n.png", "/mbm-assets/n1.png", "/mbm-assets/n2.png"],
+    images: ["/mbm-assets/PERPINDAHAN N.png", "/mbm-assets/PERPINDAHAN N_N10.png", "/mbm-assets/PERPINDAHAN N_N11.png"],
     points: ["Berpindah N saat kembali ke host."],
   },
   {
     title: "Teaser & Break",
-    images: ["/mbm-assets/teaser.png", "/mbm-assets/teaser2.png", "/mbm-assets/break.png"],
+    images: ["/mbm-assets/BREAK_2.png", "/mbm-assets/BREAK_0 TEASER.png", "/mbm-assets/BREAK_1.png"],
     points: ["BREAK wajib huruf besar.", "Tidak boleh ada spasi setelah BREAK dan CB.", "Kode CB ditulis di kolom Combreak."],
   },
   {
     title: "Closing (Closing & CT)",
-    images: ["/mbm-assets/closing-presenter.png", "/mbm-assets/ct.png"],
+    images: ["/mbm-assets/BREAK_3 HOST CLOSING.png", "/mbm-assets/CT.png"],
     points: ["Closing presenter diikuti CT sebagai penutup program."],
   },
 ];

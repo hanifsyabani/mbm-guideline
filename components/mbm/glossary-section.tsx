@@ -4,15 +4,17 @@ import { Highlight } from "./highlight";
 import { SectionHeading } from "./section-heading";
 
 type GlossarySectionProps = {
+  id?: string;
   items: GlossaryTerm[];
   query: string;
+  title?: string;
 };
 
-export function GlossarySection({ items, query }: GlossarySectionProps) {
+export function GlossarySection({ id = "istilah", items, query, title = "Daftar Istilah" }: GlossarySectionProps) {
   return (
-    <section id="istilah" className="mx-auto max-w-6xl scroll-mt-28 px-4 py-16 sm:px-6 lg:py-24">
+    <section id={id} className="mx-auto max-w-6xl scroll-mt-28 px-4 py-16 sm:px-6 lg:py-24">
       <SectionHeading
-        title="Daftar Istilah"
+        title={title}
       />
 
       {items.length === 0 ? (
@@ -28,7 +30,7 @@ export function GlossarySection({ items, query }: GlossarySectionProps) {
                 <Highlight text={item.definition} query={query} />
               </p>
               {item.format && (
-                <p className="mt-3 font-mono text-xs leading-5 text-mbm-muted">
+                <p className="mt-3 whitespace-pre-line font-mono text-xs leading-5 text-mbm-muted">
                   <Highlight text={item.format} query={query} />
                 </p>
               )}

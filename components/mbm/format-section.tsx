@@ -34,7 +34,7 @@ export function FormatSection({ groups, cases, query }: FormatSectionProps) {
                       <h3 className="text-xl font-semibold text-mbm-ink">
                         <Highlight text={group.title} query={query} />
                       </h3>
-                    
+
                       <div className="mt-5 space-y-2">
                         {group.patterns.map((pattern) => (
                           <p
@@ -79,6 +79,11 @@ export function FormatSection({ groups, cases, query }: FormatSectionProps) {
                             <p className="mt-3 font-mono text-xs leading-5 text-mbm-ink">
                               <Highlight text={caseItem.text} query={query} />
                             </p>
+                            {caseItem.text2 && (
+                              <p className="mt-3 font-mono text-xs leading-5 text-mbm-ink">
+                                <Highlight text={caseItem.text2} query={query} />
+                              </p>
+                            )}
                           </div>
                         ))}
                       </div>

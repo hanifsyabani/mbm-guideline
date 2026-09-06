@@ -54,7 +54,7 @@ export function ProgramSection({ items, query }: ProgramSectionProps) {
 
             return (
               <article key={block.title} className="border border-mbm-hairline bg-white p-5">
-                <h3 className="text-lg font-semibold text-mbm-ink">
+                <h3 className="text-lg font-semibold uppercase text-mbm-ink">
                   <Highlight text={block.title} query={query} />
                 </h3>
 
@@ -65,7 +65,7 @@ export function ProgramSection({ items, query }: ProgramSectionProps) {
                         key={`${block.title}-${image}-${index}`}
                         className={images.length === 1 ? "sm:col-span-2" : undefined}
                       >
-                        <div className="relative aspect-video overflow-hidden border border-mbm-hairline bg-mbm-surface">
+                        <div className={`relative ${images.length === 1 ? 'h-50' : "aspect-video"}  overflow-hidden border border-mbm-hairline bg-mbm-surface`}>
                           <Image
                             src={image}
                             alt={`Contoh ${block.title} ${index + 1}`}

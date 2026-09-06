@@ -4,6 +4,7 @@ import { useMemo } from "react";
 import {
   formatGroups,
   glossary,
+  newGlossary,
   programBlocks,
   rules,
   specialCases,
@@ -21,6 +22,7 @@ export function useMbmSearchResults() {
       .filter(Boolean) as FormatGroup[];
 
     const filteredGlossary = glossary.filter((term) => matchesSearch(term, cleanQuery));
+    const filteredNewGlossary = newGlossary.filter((term) => matchesSearch(term, cleanQuery));
     const filteredCases = specialCases.filter((item) => matchesSearch(item, cleanQuery));
     const filteredPrograms = programBlocks.filter((item) => matchesSearch(item, cleanQuery));
     const filteredRules = rules.filter((item) => matchesSearch(item, cleanQuery));
@@ -30,10 +32,12 @@ export function useMbmSearchResults() {
       filteredCases,
       filteredFormats,
       filteredGlossary,
+      filteredNewGlossary,
       filteredPrograms,
       filteredRules,
       totalResults:
         filteredGlossary.length +
+        filteredNewGlossary.length +
         filteredFormats.reduce((total, group) => total + group.examples.length, 0) +
         filteredCases.length +
         filteredPrograms.length +

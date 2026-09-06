@@ -21,6 +21,7 @@ export function GuidePage() {
     filteredCases,
     filteredFormats,
     filteredGlossary,
+    filteredNewGlossary,
     filteredPrograms,
     filteredRules,
   } = useMbmSearchResults();
@@ -83,6 +84,7 @@ export function GuidePage() {
     filteredCases.length,
     filteredFormats.length,
     filteredGlossary.length,
+    filteredNewGlossary.length,
     filteredPrograms.length,
     filteredRules.length,
     setActiveSection,
@@ -108,38 +110,24 @@ export function GuidePage() {
       <GlossarySection items={filteredGlossary} query={cleanQuery} />
       <section id="sumber" className="mx-auto space-y-10 max-w-6xl scroll-mt-28 px-4 py-16 sm:px-6 lg:py-24">
         <div className=" space-y-4">
-          <div className="grid lg:grid-cols-3">
-            <div className="flex justify-center">
-              <Image
-                src={'/mbm-assets/image6.png'}
-                alt="MBM Display"
-                className="w-400"
-                width={500}
-                height={500}
-              />
-            </div>
-            <div className="flex justify-center">
-              <Image
-                src={'/mbm-assets/LOT.jpeg'}
-                alt="MBM Display"
-                className="w-400"
-                width={500}
-                height={500}
-              />
-            </div>
-            <div className="flex justify-center">
-              <Image
-                src={'/mbm-assets/LOTT.jpeg'}
-                alt="MBM Display"
-                className="w-400"
-                width={500}
-                height={500}
-              />
-            </div>
+          <SectionHeading
+            title="LOT"
+          />
+          <div className="flex justify-center">
+            <Image
+              src={'/mbm-assets/LOT.jpeg'}
+              alt="MBM Display"
+              className="w-400"
+              width={500}
+              height={500}
+            />
           </div>
-          <h1 className="font-bold text-center">LOT</h1>
+
         </div>
         <div className=" space-y-4">
+          <SectionHeading
+            title="SOT"
+          />
           <div className="grid lg:grid-cols-3">
 
             <div className="flex justify-center">
@@ -170,13 +158,15 @@ export function GuidePage() {
               />
             </div>
           </div>
-          <h1 className="font-bold text-center">SOT</h1>
         </div>
         <div className=" space-y-4">
-          <div className="grid lg:grid-cols-3">
+          <SectionHeading
+            title="Wwc"
+          />
+          <div className="grid lg:grid-cols-2">
             <div className="flex justify-center">
               <Image
-                src={'/mbm-assets/image3.png'}
+                src={'/mbm-assets/wwc.png'}
                 alt="MBM Display"
                 className="w-400"
                 width={500}
@@ -185,16 +175,7 @@ export function GuidePage() {
             </div>
             <div className="flex justify-center">
               <Image
-                src={'/mbm-assets/image4.png'}
-                alt="MBM Display"
-                className="w-400"
-                width={500}
-                height={500}
-              />
-            </div>
-            <div className="flex justify-center">
-              <Image
-                src={'/mbm-assets/image5.png'}
+                src={'/mbm-assets/wwc_2.png'}
                 alt="MBM Display"
                 className="w-400"
                 width={500}
@@ -202,9 +183,83 @@ export function GuidePage() {
               />
             </div>
           </div>
-          <h1 className="font-bold text-center">Wwc</h1>
         </div>
+        <div className=" space-y-4">
+          <SectionHeading
+            title="LR"
+          />
+          <div className="grid lg:grid-cols-3">
+            <div className="flex justify-center">
+              <Image
+                src={'/mbm-assets/LR.png'}
+                alt="MBM Display"
+                className="w-400"
+                width={500}
+                height={500}
+              />
+            </div>
+            <div className="flex justify-center">
+              <Image
+                src={'/mbm-assets/image6.png'}
+                alt="MBM Display"
+                className="w-400"
+                width={500}
+                height={500}
+              />
+            </div>
+            <div className="flex justify-center">
+              <Image
+                src={'/mbm-assets/LOTT.jpeg'}
+                alt="MBM Display"
+                className="w-400"
+                width={500}
+                height={500}
+              />
+            </div>
+          </div>
+        </div>
+        <div className=" space-y-4">
+          <SectionHeading
+            title="Teleconference"
+          />
+          <div className="flex justify-center">
+            <Image
+              src={'/mbm-assets/tele.png'}
+              alt="MBM Display"
+              className="w-400"
+              width={500}
+              height={500}
+            />
+          </div>
+
+        </div>
+        <div className=" space-y-4">
+          <SectionHeading
+            title="Dialog"
+          />
+          <div className="flex justify-center">
+            <Image
+              src={'/mbm-assets/dialog.jpeg'}
+              alt="MBM Display"
+              className="w-150"
+              width={500}
+              height={500}
+            />
+          </div>
+
+
+        </div>
+
+
       </section>
+
+      {/* daftar istilah baru */}
+      <GlossarySection
+        id="istilah-baru"
+        items={filteredNewGlossary}
+        query={cleanQuery}
+        title="Daftar Istilah Baru"
+      />
 
       <FormatSection groups={filteredFormats} cases={filteredCases} query={cleanQuery} />
       <ProgramSection items={filteredPrograms} query={cleanQuery} />

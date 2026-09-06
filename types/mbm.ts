@@ -29,6 +29,7 @@ export type FormatGroup = {
 export type CompareItem = {
   status: "Salah" | "Benar" | "Catatan";
   text: string;
+  text2?: string;
 };
 
 export type SpecialCase = {

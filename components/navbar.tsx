@@ -3,16 +3,13 @@
 import Image from "next/image";
 import { navItems } from "@/constants/mbm-content";
 import { useMbmGuideStore } from "@/stores/mbm-guide-store";
-import { SearchField } from "./mbm/search-field";
 
 export default function Navbar() {
   const activeSection = useMbmGuideStore((state) => state.activeSection);
-  const query = useMbmGuideStore((state) => state.query);
-  const setQuery = useMbmGuideStore((state) => state.setQuery);
 
   return (
     <header className="sticky top-0 z-50 border-b border-mbm-hairline bg-white/95 backdrop-blur">
-      <div className=" flex flex-col gap-3 py-3 sm:px-6 lg:flex-row lg:items-center lg:justify-between">
+      <div className=" flex flex-col gap-3 py-3 sm:px-10 lg:flex-row lg:items-center lg:justify-between">
         <a
           href="#top"
           className="flex items-center gap-3 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-mbm-red"
@@ -30,7 +27,8 @@ export default function Navbar() {
             <a
               key={item.id}
               href={`#${item.id}`}
-              className={`shrink-0 border-b-2 uppercase py-2 transition hover:ntext-mbm-ink focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-mbm-red ${
+              aria-current={activeSection === item.id ? "location" : undefined}
+              className={`shrink-0 border-b-2 py-2 uppercase transition hover:text-mbm-ink focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-mbm-red ${
                 activeSection === item.id ? "border-mbm-red text-mbm-ink" : "border-transparent"
               }`}
             >
@@ -39,9 +37,7 @@ export default function Navbar() {
           ))}
         </nav>
 
-        <div className="w-full lg:max-w-64">
-          <SearchField value={query} onChange={setQuery} compact />
-        </div>
+    
       </div>
     </header>
   );

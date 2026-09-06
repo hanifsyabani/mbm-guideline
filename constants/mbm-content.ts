@@ -2,7 +2,9 @@ import type { FormatGroup, GlossaryTerm, ProgramBlock, RuleItem, SourceShot, Spe
 
 export const navItems = [
   { id: "top", label: "Beranda" },
+  { id: "tampilan", label: "Tampilan" },
   { id: "istilah", label: "Istilah" },
+  { id: "sumber", label: "Sumber" },
   { id: "format", label: "Format" },
   { id: "kepala", label: "Kepala MBM" },
   { id: "rules", label: "Rules" },
@@ -236,36 +238,52 @@ export const specialCases: SpecialCase[] = [
 export const programBlocks: ProgramBlock[] = [
   {
     title: "Kepala MBM",
+    images: ["/mbm-assets/kpl-mbm.png"],
     points: [
-      "Date: Day, DD Month YYYY. Day disingkat, bulan tidak disingkat.",
-      
+      {
+        text: "Date: Day, DD Month YYYY.",
+        children: ["Day disingkat, bulan tidak disingkat."],
+      },
       "Judul Program",
-      "Host/Anchor lebih dari satu memakai tanda &.",
-      "Tema ditulis jika ada dialog. Jika tidak ada, hapus bagian tema.",
+      {
+        text:"Host/Anchor",
+        children: ["Nama Anchor lebih dari satu menggunakan tanda “&”"],
+      },
+      {
+        text: "Tema ditulis jika ada dialog.",
+        children: ["Jika tidak ada dialog, hapus saja Temanya, hanya sampai titik di Host ada, hapus bagian tema."],
+      },
     ],
   },
   {
     title: "Lead In & Lead Out",
+    images: ["/mbm-assets/leadin.png", "/mbm-assets/leadout.png"],
     points: ["Isi nama program sebelum dan sesudah.", "Durasi acuan: 10 menit."],
   },
   {
     title: "HL (Highlight)",
+    images: ["/mbm-assets/hl.png", "/mbm-assets/hl2.png"],
     points: ["Berisi VT dengan beberapa Topik Berita."],
   },
   {
     title: "Opening (OBB & Hosting)",
+    images: ["/mbm-assets/obb.png", "/mbm-assets/obb2.png"],
+
     points: ["Dipakai untuk pembuka program sebelum masuk rundown berita."],
   },
   {
     title: "Perpindahan N",
+    images: ["/mbm-assets/perpindahan-n.png", "/mbm-assets/n1.png", "/mbm-assets/n2.png"],
     points: ["Berpindah N saat kembali ke host."],
   },
   {
     title: "Teaser & Break",
+    images: ["/mbm-assets/teaser.png", "/mbm-assets/teaser2.png", "/mbm-assets/break.png"],
     points: ["BREAK wajib huruf besar.", "Tidak boleh ada spasi setelah BREAK dan CB.", "Kode CB ditulis di kolom Combreak."],
   },
   {
     title: "Closing (Closing & CT)",
+    images: ["/mbm-assets/closing-presenter.png", "/mbm-assets/ct.png"],
     points: ["Closing presenter diikuti CT sebagai penutup program."],
   },
 ];

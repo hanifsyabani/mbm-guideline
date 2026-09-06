@@ -2,12 +2,9 @@
 
 import Image from "next/image";
 import { useMbmGuideStore } from "@/stores/mbm-guide-store";
-import { SearchField } from "./search-field";
 
 
 export function HeroSection() {
-  const query = useMbmGuideStore((state) => state.query);
-  const setQuery = useMbmGuideStore((state) => state.setQuery);
 
   return (
     <section id="top" className="relative isolate overflow-hidden border-b border-mbm-hairline">
@@ -29,10 +26,7 @@ export function HeroSection() {
             Minute By Minute <span className="text-red-500">Guideline</span>
           </h1>
 
-          <div className="mx-auto mt-8 max-w-xl">
-            <SearchField value={query} onChange={setQuery} placeholder="Cari CG, SOT, LR, BREAK..." />
-
-          </div>
+       
         </div>
       </div>
     </section>

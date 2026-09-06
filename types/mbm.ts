@@ -37,9 +37,17 @@ export type SpecialCase = {
   items: CompareItem[];
 };
 
+export type ProgramPoint =
+  | string
+  | {
+      text: string;
+      children?: ProgramPoint[];
+    };
+
 export type ProgramBlock = {
   title: string;
-  points: string[];
+  images?: string[];
+  points: ProgramPoint[];
 };
 
 export type RuleItem = {

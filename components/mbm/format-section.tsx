@@ -16,8 +16,8 @@ export function FormatSection({ groups, cases, query }: FormatSectionProps) {
   const hasResult = groups.length > 0 || cases.length > 0;
 
   return (
-    <section id="format" className="border-y border-mbm-hairline bg-mbm-surface">
-      <div className="mx-auto max-w-6xl scroll-mt-28 px-4 py-16 sm:px-6 lg:py-24">
+    <section id="format" className="scroll-mt-28 border-y border-mbm-hairline bg-mbm-surface">
+      <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:py-24">
         <SectionHeading
           title="Format Penulisan"
         />

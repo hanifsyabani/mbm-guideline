@@ -11,8 +11,8 @@ type RulesSectionProps = {
 
 export function RulesSection({ items, query }: RulesSectionProps) {
   return (
-    <section id="rules" className="border-y border-mbm-hairline bg-mbm-surface">
-      <div className="mx-auto max-w-6xl scroll-mt-28 px-4 py-16 sm:px-6 lg:py-24">
+    <section id="rules" className="scroll-mt-28 border-y border-mbm-hairline bg-mbm-surface">
+      <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:py-24">
         <SectionHeading
           title="Catatan Penting"
         />

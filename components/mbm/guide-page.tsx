@@ -166,7 +166,7 @@ export function GuidePage() {
           <div className="grid lg:grid-cols-2">
             <div className="flex justify-center">
               <Image
-                src={'/mbm-assets/wwc.png'}
+                src={'/mbm-assets/Wwc.png'}
                 alt="MBM Display"
                 className="w-400"
                 width={500}
@@ -175,7 +175,7 @@ export function GuidePage() {
             </div>
             <div className="flex justify-center">
               <Image
-                src={'/mbm-assets/wwc_2.png'}
+                src={'/mbm-assets/Wwc_2.png'}
                 alt="MBM Display"
                 className="w-400"
                 width={500}
@@ -239,7 +239,7 @@ export function GuidePage() {
           />
           <div className="flex justify-center">
             <Image
-              src={'/mbm-assets/dialog.jpeg'}
+              src={'/mbm-assets/DIALOG.jpeg'}
               alt="MBM Display"
               className="w-150"
               width={500}

@@ -325,7 +325,7 @@ export const programBlocks: ProgramBlock[] = [
   },
   {
     title: "Closing (Closing & CT)",
-    images: ["/mbm-assets/BREAK_3 HOST CLOSING.png", "/mbm-assets/CT.png"],
+    images: ["/mbm-assets/BREAK_3 HOST CLOSING.png", "/mbm-assets/ct.png"],
     points: ["Closing Presenter Diikuti CT Sebagai Penutup Program"],
   },
 ];

@@ -252,7 +252,9 @@ export const specialCases: SpecialCase[] = [
     items: [
       { status: "Salah", text: "N8: Cuaca Ekstrem, Banjir Melanda Cilegon (Sumber: IG/@febukabanten, SOT: Prabowo, Presiden RI)" },
       { status: "Benar", text: "N8: Cuaca Ekstrem, Banjir Melanda Cilegon (IG / SOT: Prabowo, Presiden RI)" },
+      { status: "Benar", text: "N8: Cuaca Ekstrem, Banjir Melanda Cilegon (X / SOT: Prabowo, Presiden RI) ➔ BENAR" },
       { status: "Benar", text: "N8: Cuaca Ekstrem, Banjir Melanda Cilegon (Dokumentasi / SOT: Prabowo, Presiden RI)" },
+      { status: "Benar", text: "N8: Cuaca Ekstrem, Banjir Melanda Cilegon (Sosmed / SOT: Prabowo, Presiden RI) ➔ Jika tidak diketahui platformnya" },
       { status: "Catatan", text: "Jika Platform Tidak Diketahui, Gunakan Sosmed" },
     ],
   },
